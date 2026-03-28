@@ -1,0 +1,118 @@
+/*All css styling is from the previous homework that's reused here*/
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    top: 0px;
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+    background-color: rgb(47, 58, 73);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;   
+    top: 0px;
+    width: 100%;
+    margin: 0px;
+    padding: 15px;
+    background-color: rgb(56, 76, 104);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+.shift {
+    margin-left: 5px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.right-shift {
+    margin-right: 5px;
+    height: 29px;
+    border-radius: 5px;
+    width: 140px;
+    padding-left: 6px;
+}
+
+.change {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous {
+    margin-left: 30px;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: rgb(70, 186, 240);
+    border: none;
+    height: 30px;
+    width: 70px;
+    border-radius: 3px;
+}
+
+.previous:hover {
+    background-color: rgb(61, 164, 212);
+    cursor: pointer;
+}
+
+.next {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: rgb(70, 186, 240);
+    border: none;
+    height: 30px;
+    width: 50px;
+    border-radius: 3px;
+}
+
+.next:hover {
+    background-color: rgb(61, 164, 212);
+    cursor: pointer;
+}
+
+#movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px;
+}
+
+#movies img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.text {
+    margin-right: 15px;
+    margin-left: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.style {
+    border: 2px solid rgb(209, 209, 209);
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
