@@ -24,7 +24,7 @@ export default function App() {
   const [pages, setPages] = useState({total_pages: 1, page: 1});
 
   const [apiKey] = useState('581203ff744af30f98a807a3a1bf8037');
-  const [url] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=1`);
+  //const [url] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=1`);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
@@ -87,8 +87,8 @@ export default function App() {
 
   // Final way to initially display the page with the first 20 popular movies
   useEffect(() => {
-    moviesSet(1, searchTerm);
-  },[]);
+    moviesSet(1, searchTerm, sortOption);
+  },[searchTerm, sortOption]);
 
   // This was the initial approach to handle changes with pagnation but
   // Didn't handle sorting or searching properly so this had to be revamped
