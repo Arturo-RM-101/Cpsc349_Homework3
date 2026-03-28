@@ -2,6 +2,16 @@ import { useState, useEffect, useCallback } from 'react';
 import MovieDesign from './components/MovieDesign';
 //import './App.css';
 
+// This is a mapping of the sort options to the corresponding 
+// API parameters which would give the respective value when
+// Either of these 4 options are selected
+const sortMap: Record<string, string> = {
+  release_asc: 'release_date.asc',
+  release_desc: 'release_date.desc',
+  rating_asc: 'vote_average.asc',
+  rating_desc: 'vote_average.desc'
+};
+
 // These are to remove the use of creating types
 // At the start of each new file when passing the API's 
 // data through the default function's parameter
@@ -28,16 +38,6 @@ export default function App() {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
-
-  // This is a mapping of the sort options to the corresponding 
-  // API parameters which would give the respective value when
-  // Either of these 4 options are selected
-  const sortMap: Record<string, string> = {
-    release_asc: 'release_date.asc',
-    release_desc: 'release_date.desc',
-    rating_asc: 'vote_average.asc',
-    rating_desc: 'vote_average.desc'
-  };
 
   // Initial use of useEffect to fetch the API's data when the page is loaded
   // useEffect(() => {
@@ -87,8 +87,8 @@ export default function App() {
 
   // Final way to initially display the page with the first 20 popular movies
   useEffect(() => {
-    moviesSet(1, searchTerm, sortOption);
-  },[moviesSet, searchTerm, sortOption]);
+    moviesSet(1);
+  },[moviesSet]);
 
   // This was the initial approach to handle changes with pagnation but
   // Didn't handle sorting or searching properly so this had to be revamped
