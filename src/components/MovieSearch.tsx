@@ -1,5 +1,3 @@
-import react from 'react';
-
 type SearchProps = {
     searchTerm: string;
     handleSearch: (value: string) => void;

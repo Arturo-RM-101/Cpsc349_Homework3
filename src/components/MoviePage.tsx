@@ -1,5 +1,3 @@
-import react from 'react';
-
 type PagesProps = {
     page: number;
     totalPages: number;

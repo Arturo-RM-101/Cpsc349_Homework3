@@ -1,4 +1,3 @@
-import react from 'react';
 import { Movie } from '../App';
 
 // type Movie = {

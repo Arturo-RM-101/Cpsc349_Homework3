@@ -1,4 +1,3 @@
-import react from 'react';
 import MovieCard from './MovieCard';
 import MoviePage from './MoviePage';
 import MovieSearch from './MovieSearch';

@@ -1,5 +1,3 @@
-import react from 'react';
-
 type SortProps = {
     sortOption: string;
     handleSort: (value: string) => void;
