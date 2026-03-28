@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import MovieDesign from './components/MovieDesign';
 //import './App.css';
 
@@ -54,7 +54,7 @@ export default function App() {
   // MovieSet is the main function that fetches the API's data and is used 
   // Across the page to update the data based on the page number, search term, 
   // And sort option
-  const moviesSet = (page = 1, term: string = '', sort: string = '') => {
+  const moviesSet = useCallback((page = 1, term: string = '', sort: string = '') => {
     let url = '';
 
     // Rhe reason why we have a const here is to resolve the issue
@@ -83,12 +83,12 @@ export default function App() {
         setPages({total_pages: data.total_pages, page: data.page});
       })
       .catch((error) => console.error('Error fetching data:', error));
-  }
+  }, [apiKey]);
 
   // Final way to initially display the page with the first 20 popular movies
   useEffect(() => {
     moviesSet(1, searchTerm, sortOption);
-  },[searchTerm, sortOption]);
+  },[moviesSet, searchTerm, sortOption]);
 
   // This was the initial approach to handle changes with pagnation but
   // Didn't handle sorting or searching properly so this had to be revamped
